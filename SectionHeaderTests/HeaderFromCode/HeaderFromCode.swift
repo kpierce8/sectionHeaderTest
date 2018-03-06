@@ -24,7 +24,11 @@ class HeaderFromCode: UITableViewHeaderFooterView {
         super.init(reuseIdentifier: reuseIdentifier)
         headerLabel = UILabel()
         showButton = UIButton(frame: CGRect(x: 120, y: 5.0, width: buttonWidth, height: itemHeights))
-        
+        let bgView = UIView()
+        bgView.backgroundColor = UIColor(hue: 0.9, saturation: 0.1, brightness: 0.9, alpha: 0.5)
+        bgView.bounds = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 70)
+        bgView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 70)
+        self.contentView.addSubview(bgView)
         self.contentView.addSubview(headerLabel)
         self.contentView.addSubview(showButton)
 

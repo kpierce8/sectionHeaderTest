@@ -14,22 +14,22 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" restorationIdentifier="HeaderViewNib" id="iN0-l3-epB" customClass="HeaderViewNib" customModule="SectionHeaderTests" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="364" height="70"/>
+            <rect key="frame" x="0.0" y="0.0" width="364" height="42"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDl-Ph-i4R">
-                    <rect key="frame" x="0.0" y="0.0" width="364" height="70"/>
+                    <rect key="frame" x="0.0" y="0.0" width="364" height="42"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipc-eI-MFo">
-                            <rect key="frame" x="8" y="25" width="42" height="21"/>
+                            <rect key="frame" x="8" y="11" width="42" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbJ-E2-ssU">
-                            <rect key="frame" x="305" y="24" width="44" height="22"/>
+                            <rect key="frame" x="305" y="10" width="44" height="22"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="44" id="tGC-pA-752"/>
+                                <constraint firstAttribute="width" constant="44" id="Mx8-un-UU3"/>
                             </constraints>
                             <connections>
                                 <action selector="toggleHeaderBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="SL5-Pf-fHM"/>
@@ -38,25 +38,25 @@
                     </subviews>
                     <color key="backgroundColor" red="0.83714932203292847" green="0.95800870656967163" blue="0.8322029709815979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="ipc-eI-MFo" firstAttribute="centerY" secondItem="PDl-Ph-i4R" secondAttribute="centerY" id="8QG-xc-42v"/>
-                        <constraint firstItem="QbJ-E2-ssU" firstAttribute="centerY" secondItem="PDl-Ph-i4R" secondAttribute="centerY" id="DBt-ug-Awx"/>
-                        <constraint firstAttribute="trailing" secondItem="QbJ-E2-ssU" secondAttribute="trailing" constant="15" id="Fm5-Aw-Jjh"/>
-                        <constraint firstItem="ipc-eI-MFo" firstAttribute="leading" secondItem="PDl-Ph-i4R" secondAttribute="leadingMargin" id="nFu-Q3-dXE"/>
+                        <constraint firstItem="ipc-eI-MFo" firstAttribute="centerY" secondItem="PDl-Ph-i4R" secondAttribute="centerY" id="6cu-HG-myy"/>
+                        <constraint firstItem="ipc-eI-MFo" firstAttribute="leading" secondItem="PDl-Ph-i4R" secondAttribute="leadingMargin" id="6ht-33-mtu"/>
+                        <constraint firstAttribute="trailing" secondItem="QbJ-E2-ssU" secondAttribute="trailing" constant="15" id="UST-fQ-KSx"/>
+                        <constraint firstItem="ipc-eI-MFo" firstAttribute="bottom" secondItem="QbJ-E2-ssU" secondAttribute="bottom" id="WFO-Y2-Hwj"/>
                     </constraints>
                 </view>
             </subviews>
             <constraints>
-                <constraint firstItem="PDl-Ph-i4R" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Rmt-l7-bHj"/>
-                <constraint firstItem="PDl-Ph-i4R" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Uz4-us-adT"/>
-                <constraint firstAttribute="trailing" secondItem="PDl-Ph-i4R" secondAttribute="trailing" id="Xve-xi-eIX"/>
-                <constraint firstItem="PDl-Ph-i4R" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="iG0-gc-a1M"/>
+                <constraint firstItem="PDl-Ph-i4R" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Sjp-Si-0ED"/>
+                <constraint firstItem="PDl-Ph-i4R" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Tyo-Ns-0P4"/>
+                <constraint firstAttribute="trailing" secondItem="PDl-Ph-i4R" secondAttribute="trailing" id="ZXW-p3-ord"/>
+                <constraint firstItem="PDl-Ph-i4R" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="fQv-aH-4fZ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="headerLabel" destination="ipc-eI-MFo" id="msk-Nj-w2T"/>
             </connections>
-            <point key="canvasLocation" x="39" y="65"/>
+            <point key="canvasLocation" x="39" y="51"/>
         </view>
     </objects>
 </document>

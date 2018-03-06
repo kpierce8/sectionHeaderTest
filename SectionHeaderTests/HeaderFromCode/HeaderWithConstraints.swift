@@ -37,7 +37,7 @@ class HeaderWithConstraints: UITableViewHeaderFooterView {
         newView.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
         newView.leadingAnchor.constraint(equalTo: newView.superview!.leadingAnchor).isActive = true
         newView.trailingAnchor.constraint(equalTo: newView.superview!.trailingAnchor).isActive = true
-        newView.backgroundColor = UIColor(hue: 0.8, saturation: 0.2, brightness: 0.9, alpha: 1.0)
+        newView.backgroundColor = UIColor(hue: 0.8, saturation: 0.2, brightness: 0.9, alpha: 0.5)
         
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
         headerLabel.leadingAnchor.constraint(equalTo: headerLabel.superview!.leadingAnchor, constant: 5).isActive = true

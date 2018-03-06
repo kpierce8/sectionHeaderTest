@@ -19,8 +19,8 @@ class ViewController: UIViewController {
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "HeaderViewNib")
         tableView.register(HeaderFromCode.self, forHeaderFooterViewReuseIdentifier: "section")
         tableView.register(HeaderWithConstraints.self, forHeaderFooterViewReuseIdentifier: "constraints")
-        tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
-       // tableView.estimatedSectionHeaderHeight = 25;
+       tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
+        tableView.estimatedSectionHeaderHeight = 25;
        // https://stackoverflow.com/questions/1166236/light-gray-background-in-bounce-area-of-a-uitableview
        // let bgView = UIView()
        // bgView.backgroundColor = UIColor.white
@@ -57,9 +57,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50.0
-    }
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 50.0
+//    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
      
@@ -71,12 +71,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             let aSection = tableView.dequeueReusableHeaderFooterView(withIdentifier: "section") as! HeaderFromCode
             //aSection.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50)
             //aSection.backgroundView?.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50)
-            //aSection.backgroundView?.backgroundColor =  UIColor(hue: 0.2, saturation: 0.5, brightness: 0.5, alpha: 1.0)
-            //aSection.contentView.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50)
+            
+            //aSection.backgroundView = bgView
+            //aSection.contentView.addSubview(bgView)
+
             aSection.headerLabel.text = sectionHeaders[section]
             aSection.headerLabel.sizeToFit()
-            //print("tableview width is \(tableView.frame.width)")
-            //aSection.setNeedsLayout()
+            //aSection.layoutIfNeeded()
            return aSection
         } else {
             let aSection = tableView.dequeueReusableHeaderFooterView(withIdentifier: "constraints") as! HeaderWithConstraints
