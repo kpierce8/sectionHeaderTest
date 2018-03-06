@@ -21,6 +21,10 @@ class ViewController: UIViewController {
         tableView.register(HeaderWithConstraints.self, forHeaderFooterViewReuseIdentifier: "constraints")
         tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
        // tableView.estimatedSectionHeaderHeight = 25;
+       // https://stackoverflow.com/questions/1166236/light-gray-background-in-bounce-area-of-a-uitableview
+        let bgView = UIView()
+        bgView.backgroundColor = UIColor.white
+        self.tableView.backgroundView = bgView
         
     }
 
@@ -53,9 +57,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 50.0
-//    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50.0
+    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
      
