@@ -22,9 +22,9 @@ class ViewController: UIViewController {
         tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
        // tableView.estimatedSectionHeaderHeight = 25;
        // https://stackoverflow.com/questions/1166236/light-gray-background-in-bounce-area-of-a-uitableview
-        let bgView = UIView()
-        bgView.backgroundColor = UIColor.white
-        self.tableView.backgroundView = bgView
+       // let bgView = UIView()
+       // bgView.backgroundColor = UIColor.white
+        //self.tableView.backgroundView = bgView
         
     }
 
