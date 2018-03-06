@@ -13,7 +13,7 @@ class HeaderFromCode: UITableViewHeaderFooterView {
     var headerLabel: UILabel!
     var showButton: UIButton!
     
-    let itemHeights: CGFloat = 44.0
+    let itemHeights: CGFloat = 40.0
     let buttonWidth: CGFloat = 44.0
     
     required init?(coder aDecoder: NSCoder) {
@@ -23,7 +23,7 @@ class HeaderFromCode: UITableViewHeaderFooterView {
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         headerLabel = UILabel()
-        showButton = UIButton(frame: CGRect(x: 100, y: 3.0, width: buttonWidth, height: itemHeights))
+        showButton = UIButton(frame: CGRect(x: 120, y: 5.0, width: buttonWidth, height: itemHeights))
         
         self.contentView.addSubview(headerLabel)
         self.contentView.addSubview(showButton)
