@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		971E5947204E443900C5C847 /* HeaderFromCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971E5946204E443900C5C847 /* HeaderFromCode.swift */; };
+		971E5949204E49D500C5C847 /* HeaderWithConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971E5948204E49D500C5C847 /* HeaderWithConstraints.swift */; };
 		97FADD60204C89E70001AAC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FADD5F204C89E70001AAC5 /* AppDelegate.swift */; };
 		97FADD62204C89E70001AAC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FADD61204C89E70001AAC5 /* ViewController.swift */; };
 		97FADD65204C89E70001AAC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97FADD63204C89E70001AAC5 /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		971E5946204E443900C5C847 /* HeaderFromCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderFromCode.swift; sourceTree = "<group>"; };
+		971E5948204E49D500C5C847 /* HeaderWithConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderWithConstraints.swift; sourceTree = "<group>"; };
 		97FADD5C204C89E70001AAC5 /* SectionHeaderTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SectionHeaderTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97FADD5F204C89E70001AAC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97FADD61204C89E70001AAC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 		97FADD72204C8A230001AAC5 /* HeaderFromCode */ = {
 			isa = PBXGroup;
 			children = (
+				971E5946204E443900C5C847 /* HeaderFromCode.swift */,
+				971E5948204E49D500C5C847 /* HeaderWithConstraints.swift */,
 			);
 			path = HeaderFromCode;
 			sourceTree = "<group>";
@@ -160,8 +166,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				97FADD62204C89E70001AAC5 /* ViewController.swift in Sources */,
+				971E5949204E49D500C5C847 /* HeaderWithConstraints.swift in Sources */,
 				97FADD74204C8E010001AAC5 /* HeaderViewNib.swift in Sources */,
 				97FADD60204C89E70001AAC5 /* AppDelegate.swift in Sources */,
+				971E5947204E443900C5C847 /* HeaderFromCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

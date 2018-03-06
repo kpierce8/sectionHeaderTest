@@ -17,6 +17,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let headerNib = UINib.init(nibName: "HeaderViewNib", bundle: Bundle.main)
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "HeaderViewNib")
+        tableView.register(HeaderFromCode.self, forHeaderFooterViewReuseIdentifier: "section")
+        tableView.register(HeaderWithConstraints.self, forHeaderFooterViewReuseIdentifier: "constraints")
     }
 
     var sectionHeaders = ["kings landing","captured","pentos"]
@@ -49,8 +51,34 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let aSection = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderViewNib") as! HeaderViewNib
-        aSection.headerLabel.text = sectionHeaders[section]
-        return aSection
+     
+        if sectionHeaders[section] == "pentos" {
+            let aSection = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderViewNib") as! HeaderViewNib
+            aSection.headerLabel.text = sectionHeaders[section]
+            return aSection
+        } else if section == 0 {
+            let aSection = tableView.dequeueReusableHeaderFooterView(withIdentifier: "section") as! HeaderFromCode
+            aSection.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50)
+            aSection.backgroundView?.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50)
+            aSection.backgroundView?.backgroundColor =  UIColor(hue: 0.2, saturation: 0.5, brightness: 0.5, alpha: 1.0)
+            aSection.contentView.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50)
+            aSection.headerLabel.text = sectionHeaders[section]
+            aSection.headerLabel.sizeToFit()
+            print("tableview width is \(tableView.frame.width)")
+            aSection.setNeedsLayout()
+           return aSection
+        } else {
+            let aSection = tableView.dequeueReusableHeaderFooterView(withIdentifier: "constraints") as! HeaderWithConstraints
+            aSection.headerLabel.text = sectionHeaders[section]
+            return aSection
+        }
+        
+    
     }
+
+
+
+
+
+
 }

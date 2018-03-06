@@ -26,12 +26,11 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbJ-E2-ssU">
-                            <rect key="frame" x="305" y="20" width="44" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbJ-E2-ssU">
+                            <rect key="frame" x="305" y="24" width="44" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="44" id="tGC-pA-752"/>
                             </constraints>
-                            <state key="normal" title="Button"/>
                             <connections>
                                 <action selector="toggleHeaderBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="SL5-Pf-fHM"/>
                             </connections>
