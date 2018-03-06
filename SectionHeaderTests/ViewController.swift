@@ -19,6 +19,9 @@ class ViewController: UIViewController {
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "HeaderViewNib")
         tableView.register(HeaderFromCode.self, forHeaderFooterViewReuseIdentifier: "section")
         tableView.register(HeaderWithConstraints.self, forHeaderFooterViewReuseIdentifier: "constraints")
+        tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
+       // tableView.estimatedSectionHeaderHeight = 25;
+        
     }
 
     var sectionHeaders = ["kings landing","captured","pentos"]
@@ -50,9 +53,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50.0
-    }
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 50.0
+//    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
      
