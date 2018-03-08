@@ -85,7 +85,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if bob == 0 {
             let aSection = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderViewNib") as! HeaderViewNib
             aSection.headerLabel.text = sectionHeaders[section]
-            aSection.explanationLabel.text = sectionText[section]
+            if aSection.collapsed  == true {
+                aSection.explanationLabel.text = ""
+            } else {
+                aSection.explanationLabel.text = sectionText[section]
+            }
+            
             print(aSection.contentView.viewWithTag(12)?.frame.height)
             //tableView.sectionHeaderHeight = aSection.headerLabel.frame.height + 20
             return aSection

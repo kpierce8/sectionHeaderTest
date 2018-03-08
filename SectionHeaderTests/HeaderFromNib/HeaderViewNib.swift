@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol HeaderViewNibDelegate {
+    func toggleHeaderBtn()
+}
+
 class HeaderViewNib: UITableViewHeaderFooterView {
 
     @IBOutlet weak var headerView: UIView!
@@ -16,7 +20,11 @@ class HeaderViewNib: UITableViewHeaderFooterView {
     @IBOutlet weak var explanationView: UIView!
     @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var explanationLabel: UILabel!
-    @IBAction func toggleHeaderBtn(_ sender: UIButton) {
+    
+    var collapsed: Bool = false
+    
+    @IBAction func toggleHeaderBtnWasPressed(_ sender: UIButton) {
+        self.collapsed = !self.collapsed
     }
    
     
