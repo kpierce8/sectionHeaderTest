@@ -28,9 +28,10 @@ class HeaderFromCode: UITableViewHeaderFooterView {
         bgView.backgroundColor = UIColor(hue: 0.9, saturation: 0.1, brightness: 0.9, alpha: 0.5)
         bgView.bounds = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 70)
         bgView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 70)
+        bgView.addSubview(headerLabel)
+        bgView.addSubview(showButton)
         self.contentView.addSubview(bgView)
-        self.contentView.addSubview(headerLabel)
-        self.contentView.addSubview(showButton)
+
 
         showButton.backgroundColor = UIColor.blue
     }

@@ -10,7 +10,12 @@ import UIKit
 
 class HeaderViewNib: UITableViewHeaderFooterView {
 
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerLabel: UILabel!
+    
+    @IBOutlet weak var explanationView: UIView!
+    @IBOutlet weak var outerView: UIView!
+    @IBOutlet weak var explanationLabel: UILabel!
     @IBAction func toggleHeaderBtn(_ sender: UIButton) {
     }
    

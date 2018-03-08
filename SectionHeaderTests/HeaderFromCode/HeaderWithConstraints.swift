@@ -26,10 +26,13 @@ class HeaderWithConstraints: UITableViewHeaderFooterView {
         showButton = UIButton()
         let newView = UIView()
         
-        
+      
         newView.addSubview(headerLabel)
         newView.addSubview(showButton)
         self.contentView.addSubview(newView)
+        self.contentView.heightAnchor.constraint(equalTo: newView.heightAnchor, multiplier: 1.0).priority = UILayoutPriority(rawValue: 999)
+        self.contentView.heightAnchor.constraint(equalTo: newView.heightAnchor, multiplier: 1.0).isActive = true
+        
         
         newView.translatesAutoresizingMaskIntoConstraints = false
         newView.topAnchor.constraint(equalTo: newView.superview!.topAnchor).isActive = true
@@ -38,6 +41,7 @@ class HeaderWithConstraints: UITableViewHeaderFooterView {
         newView.leadingAnchor.constraint(equalTo: newView.superview!.leadingAnchor).isActive = true
         newView.trailingAnchor.constraint(equalTo: newView.superview!.trailingAnchor).isActive = true
         newView.backgroundColor = UIColor(hue: 0.8, saturation: 0.2, brightness: 0.9, alpha: 0.5)
+        
         
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
         headerLabel.leadingAnchor.constraint(equalTo: headerLabel.superview!.leadingAnchor, constant: 5).isActive = true
