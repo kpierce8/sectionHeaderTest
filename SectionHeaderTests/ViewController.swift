@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
+    var sectionCollapsed = [String: Bool]()
     var sectionHeaders = ["kings landing","captured","pentos"]
     var sectionText = ["not a fun place", "there be bars of iron", "there be bars and wine is where all sorts of weird stuff happens but not as weird as in braavos, ewww"]
     
@@ -31,7 +31,9 @@ class ViewController: UIViewController {
         tableView.register(HeaderFromCode.self, forHeaderFooterViewReuseIdentifier: "section")
         tableView.register(HeaderWithConstraints.self, forHeaderFooterViewReuseIdentifier: "constraints")
    
-        
+        for sec in sectionHeaders {
+            sectionCollapsed[sec] = false
+        }
         self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension
         self.tableView.estimatedSectionHeaderHeight = 5
 
@@ -50,7 +52,9 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension ViewController: UITableViewDelegate, UITableViewDataSource, HeaderViewNibDelegate {
+    
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionHeaders.count
@@ -67,61 +71,31 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-//        return 25
-//    }
-
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 50
-//    }
-    
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 50
-//    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-     let bob = 0
-        
-        if bob == 0 {
-            let aSection = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderViewNib") as! HeaderViewNib
+    
+        let aSection = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderViewNib") as! HeaderViewNib
             aSection.headerLabel.text = sectionHeaders[section]
-            if aSection.collapsed  == true {
+            aSection.delegate = self
+            aSection.section = section
+            
+            if sectionCollapsed[sectionHeaders[section]]  == true {
                 aSection.explanationLabel.text = ""
             } else {
                 aSection.explanationLabel.text = sectionText[section]
             }
             
-            print(aSection.contentView.viewWithTag(12)?.frame.height)
+            //print(aSection.contentView.viewWithTag(12)?.frame.height)
             //tableView.sectionHeaderHeight = aSection.headerLabel.frame.height + 20
             return aSection
-        } else if bob == 1 {
-//            let aSection = tableView.dequeueReusableHeaderFooterView(withIdentifier: "section") as! HeaderFromCode
-//            aSection.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50)
-//            aSection.backgroundView?.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50)
-//
-//            //aSection.backgroundView = bgView
-//            //aSection.contentView.addSubview(bgView)
-//
-//            aSection.headerLabel.text = sectionHeaders[section]
-//            aSection.headerLabel.sizeToFit()
-//            tableView.sectionHeaderHeight = aSection.contentView.frame.height
-//            print(aSection  .frame.height)
-//           return aSection.contentView
-        } else {
-//            let aSection = tableView.dequeueReusableHeaderFooterView(withIdentifier: "constraints") as! HeaderWithConstraints
-//            aSection.headerLabel.text = sectionHeaders[section]
-//            print(aSection.contentView.frame.height)
-//            tableView.sectionHeaderHeight = aSection.headerLabel.frame.height + 20
-//            aSection.translatesAutoresizingMaskIntoConstraints = false
-//            return aSection
+    }
+    
+        func toggleHeaderBtn(header: HeaderViewNib, section: Int) {
+            sectionCollapsed[sectionHeaders[section]]  = !sectionCollapsed[sectionHeaders[section]]!
+            print("section \(section) is now \(sectionCollapsed[sectionHeaders[section]])")
+            tableView.beginUpdates()
+            tableView.reloadSections([section], with: .automatic)
+            tableView.endUpdates()
         }
         
-    
-    }
-
-
-
-
-
-
 }

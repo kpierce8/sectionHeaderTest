@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HeaderViewNibDelegate {
-    func toggleHeaderBtn()
+    func toggleHeaderBtn(header: HeaderViewNib, section: Int)
 }
 
 class HeaderViewNib: UITableViewHeaderFooterView {
@@ -22,18 +22,16 @@ class HeaderViewNib: UITableViewHeaderFooterView {
     @IBOutlet weak var explanationLabel: UILabel!
     
     var collapsed: Bool = false
+    var delegate: HeaderViewNibDelegate?
+    var section: Int!
+    
+    
     
     @IBAction func toggleHeaderBtnWasPressed(_ sender: UIButton) {
-        self.collapsed = !self.collapsed
+      delegate?.toggleHeaderBtn(header: self, section: section)
     }
    
     
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    
 
 }
