@@ -21,6 +21,8 @@ class HeaderViewNib: UITableViewHeaderFooterView {
     @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var explanationLabel: UILabel!
     
+  //  @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
+    
     var collapsed: Bool = false
     var delegate: HeaderViewNibDelegate?
     var section: Int!
