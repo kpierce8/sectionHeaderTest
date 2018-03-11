@@ -22,8 +22,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZxN-MO-P1u" userLabel="ExplanationView">
                             <rect key="frame" x="0.0" y="40" width="364" height="32"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeE-fY-pJr">
-                                    <rect key="frame" x="16" y="8" width="332" height="16"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeE-fY-pJr">
+                                    <rect key="frame" x="16" y="6" width="332" height="20.5"/>
                                     <accessibility key="accessibilityConfiguration" identifier="expLbl"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
@@ -33,10 +33,9 @@
                             <color key="backgroundColor" red="0.87222604879999999" green="0.81338835740000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <accessibility key="accessibilityConfiguration" identifier="explanationView"/>
                             <constraints>
-                                <constraint firstItem="VeE-fY-pJr" firstAttribute="top" secondItem="ZxN-MO-P1u" secondAttribute="topMargin" priority="999" id="FMe-3m-WJM"/>
                                 <constraint firstItem="VeE-fY-pJr" firstAttribute="leading" secondItem="ZxN-MO-P1u" secondAttribute="leadingMargin" priority="999" constant="8" id="OdN-Mk-9zz"/>
                                 <constraint firstAttribute="trailingMargin" secondItem="VeE-fY-pJr" secondAttribute="trailing" priority="999" constant="8" id="TXx-6y-ydn"/>
-                                <constraint firstAttribute="bottomMargin" secondItem="VeE-fY-pJr" secondAttribute="bottom" priority="999" id="Uzj-T1-eQD"/>
+                                <constraint firstItem="VeE-fY-pJr" firstAttribute="centerY" secondItem="ZxN-MO-P1u" secondAttribute="centerY" id="he5-W0-sHy"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" verticalCompressionResistancePriority="751" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDl-Ph-i4R">

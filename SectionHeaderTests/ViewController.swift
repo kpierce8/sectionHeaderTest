@@ -15,16 +15,16 @@ class ViewController: UIViewController {
     
     var sectionCollapsed = [String: Bool]()
     var headerHeight = [Int: CGFloat]()
-    // var sectionHeaders = ["kings landing","captured","pentos"]
-    var sectionHeaders = ["pentos", "kings landing"]
+     var sectionHeaders = ["kings landing","captured","pentos"]
+    //var sectionHeaders = ["pentos", "kings landing"]
     var sectionText = ["not a fun place plus a bunch of tother stuff to make a longer label", "there be bars of iron", "there be bars and wine is where all sorts of weird stuff happens but not as weird as in braavos, ewww"]
     
     var sectionData : [String : [String]] = ["kings landing": ["cersei", "joffrey", "tywin"],
                                              "captured" : ["jaime", "tyrion"],
                                              "pentos": ["tyrion", "varesh"]]
     
-    var myHeight: CGFloat = 200.0
-    
+    var myHeight: CGFloat = 150.0
+    var tvWidth: CGFloat = 0.0
     
     
     
@@ -34,16 +34,17 @@ class ViewController: UIViewController {
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "HeaderViewNib")
         tableView.register(HeaderFromCode.self, forHeaderFooterViewReuseIdentifier: "section")
         tableView.register(HeaderWithConstraints.self, forHeaderFooterViewReuseIdentifier: "constraints")
-   
-        for sec in sectionHeaders {
-            sectionCollapsed[sec] = true
+        tvWidth = tableView.frame.size.width
+        for sec in 0..<sectionHeaders.count {
+            sectionCollapsed[sectionHeaders[sec]] = true
+           headerHeight[sec] = sectionText[sec].heightWithConstrainedWidth(width: tvWidth, font: UIFont.preferredFont(forTextStyle: .body)) + 40
         }
-       // self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension
-       // self.tableView.estimatedSectionHeaderHeight = 28
-      
+        
+        
+        
+        
+        self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension
 
-   //     self.tableView.rowHeight = UITableViewAutomaticDimension
-   //     self.tableView.estimatedRowHeight = 40
     
         
         // https://stackoverflow.com/questions/1166236/light-gray-background-in-bounce-area-of-a-uitableview
@@ -70,7 +71,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, HeaderView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return myHeight
+       
+        print("sectionText calculated height for section \(section) is \(sectionText[section].heightWithConstrainedWidth(width: tvWidth, font: UIFont.preferredFont(forTextStyle: .body)))")
+        
+        return sectionCollapsed[sectionHeaders[section]]! ? headerHeight[section]! :40.0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,23 +92,22 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, HeaderView
             aSection.delegate = self
             aSection.section = section
 
-                aSection.explanationLabel.text = sectionText[section]
+            aSection.explanationLabel.text = sectionText[section]
 
             
-            print(aSection.contentView.frame.height)
-            //print(aSection.outerView.frame.height)
-            print(aSection.explanationView.frame.height)
-            //tableView.sectionHeaderHeight = aSection.outerView.frame.height + 20
+            print(aSection.headerLabel.frame.height)
+        
+            print(aSection.explanationLabel.frame.height)
+        
             return aSection
     }
     
         func toggleHeaderBtn(header: HeaderViewNib, section: Int) {
             sectionCollapsed[sectionHeaders[section]]  = !sectionCollapsed[sectionHeaders[section]]!
             
-            myHeight = sectionCollapsed[sectionHeaders[section]]! ? 100.0 : 40.0
+            //myHeight = sectionCollapsed[sectionHeaders[section]]! ? 40.0 : headerHeight[section]!
+             
             
-            
-            // print("section \(section) is now \(sectionCollapsed[sectionHeaders[section]])")
             tableView.beginUpdates()
             tableView.reloadSections([section], with: .automatic)
             tableView.endUpdates()

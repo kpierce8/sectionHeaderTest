@@ -27,6 +27,17 @@ class HeaderViewNib: UITableViewHeaderFooterView {
     var delegate: HeaderViewNibDelegate?
     var section: Int!
     
+//    override init(reuseIdentifier: String?) {
+//        super.init(reuseIdentifier: reuseIdentifier)
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//
+//    func customInit(){
+//
+//    }
     
     
     @IBAction func toggleHeaderBtnWasPressed(_ sender: UIButton) {
