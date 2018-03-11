@@ -9,7 +9,8 @@
 import UIKit
 
 protocol HeaderViewNibDelegate {
-    func toggleHeaderBtn(header: HeaderViewNib, section: Int)
+   // func toggleHeaderBtn(header: HeaderViewNib, section: Int)
+    func toggleHeaderBtn(section: Int)
 }
 
 class HeaderViewNib: UITableViewHeaderFooterView {
@@ -21,27 +22,13 @@ class HeaderViewNib: UITableViewHeaderFooterView {
     @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var explanationLabel: UILabel!
     
-  //  @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
-    
-    var collapsed: Bool = false
+    //var collapsed: Bool = false
     var delegate: HeaderViewNibDelegate?
     var section: Int!
     
-//    override init(reuseIdentifier: String?) {
-//        super.init(reuseIdentifier: reuseIdentifier)
-//    }
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//
-//    func customInit(){
-//
-//    }
-    
     
     @IBAction func toggleHeaderBtnWasPressed(_ sender: UIButton) {
-      delegate?.toggleHeaderBtn(header: self, section: section)
+      delegate?.toggleHeaderBtn(section: section)
     }
    
     

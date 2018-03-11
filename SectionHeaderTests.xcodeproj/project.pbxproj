@@ -67,12 +67,12 @@
 				97FADD72204C8A230001AAC5 /* HeaderFromCode */,
 				97FADD71204C8A0B0001AAC5 /* HeaderFromNib */,
 				97FADD5F204C89E70001AAC5 /* AppDelegate.swift */,
+				974D5EA920558BD100187DC1 /* StringHeightExt.swift */,
 				97FADD61204C89E70001AAC5 /* ViewController.swift */,
 				97FADD63204C89E70001AAC5 /* Main.storyboard */,
 				97FADD66204C89E80001AAC5 /* Assets.xcassets */,
 				97FADD68204C89E80001AAC5 /* LaunchScreen.storyboard */,
 				97FADD6B204C89E80001AAC5 /* Info.plist */,
-				974D5EA920558BD100187DC1 /* StringHeightExt.swift */,
 			);
 			path = SectionHeaderTests;
 			sourceTree = "<group>";

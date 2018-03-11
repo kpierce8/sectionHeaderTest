@@ -13,20 +13,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var sectionCollapsed = [String: Bool]()
-    var headerHeight = [Int: CGFloat]()
-     var sectionHeaders = ["kings landing","captured","pentos"]
-    //var sectionHeaders = ["pentos", "kings landing"]
-    var sectionText = ["not a fun place plus a bunch of tother stuff to make a longer label", "there be bars of iron", "there be bars and wine is where all sorts of weird stuff happens but not as weird as in braavos, ewww"]
-    
-    var sectionData : [String : [String]] = ["kings landing": ["cersei", "joffrey", "tywin"],
+    let sectionHeaders = ["kings landing","captured","pentos"]
+    //let sectionHeaders = ["kings landing"]
+    let sectionText = ["not a fun place plus a bunch of tother stuff to make a longer label", "there be bars of iron", "there be bars and wine is where all sorts of weird stuff happens but not as weird as in braavos, ewww"]
+    let sectionData : [String : [String]] = ["kings landing": ["cersei", "joffrey", "tywin"],
                                              "captured" : ["jaime", "tyrion"],
                                              "pentos": ["tyrion", "varesh"]]
     
-    var myHeight: CGFloat = 150.0
+    var sectionCollapsed = [String: Bool]()
+    var headerHeight = [Int: CGFloat]()
     var tvWidth: CGFloat = 0.0
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,30 +34,15 @@ class ViewController: UIViewController {
         tvWidth = tableView.frame.size.width
         for sec in 0..<sectionHeaders.count {
             sectionCollapsed[sectionHeaders[sec]] = true
-           headerHeight[sec] = sectionText[sec].heightWithConstrainedWidth(width: tvWidth, font: UIFont.preferredFont(forTextStyle: .body)) + 40
+           headerHeight[sec] = sectionText[sec].heightWithConstrainedWidth(width: tvWidth, font: UIFont.preferredFont(forTextStyle: .body)) + 40 + 4
         }
         
-        
-        
-        
-        self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension
-
-    
-        
-        // https://stackoverflow.com/questions/1166236/light-gray-background-in-bounce-area-of-a-uitableview
-       // let bgView = UIView()
-       // bgView.backgroundColor = UIColor.white
-        //self.tableView.backgroundView = bgView
-        
+      //  self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension
     }
-
-
-
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource, HeaderViewNibDelegate {
-    
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionHeaders.count
@@ -91,25 +73,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, HeaderView
             aSection.headerLabel.text = sectionHeaders[section]
             aSection.delegate = self
             aSection.section = section
-
             aSection.explanationLabel.text = sectionText[section]
-
-            
-            print(aSection.headerLabel.frame.height)
-        
-            print(aSection.explanationLabel.frame.height)
-        
             return aSection
     }
     
-        func toggleHeaderBtn(header: HeaderViewNib, section: Int) {
+        func toggleHeaderBtn(section: Int) {
             sectionCollapsed[sectionHeaders[section]]  = !sectionCollapsed[sectionHeaders[section]]!
-            
-            //myHeight = sectionCollapsed[sectionHeaders[section]]! ? 40.0 : headerHeight[section]!
-             
-            
             tableView.beginUpdates()
-            tableView.reloadSections([section], with: .automatic)
+            tableView.reloadSections([section], with: .automatic)  // <- that's a place for an animation effect woo hoo!
             tableView.endUpdates()
         }
     
