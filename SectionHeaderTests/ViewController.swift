@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     
     @IBOutlet weak var tableView: UITableView!
-    
+    //MARK: data section
     let sectionHeaders = ["kings landing","captured","pentos"]
     //let sectionHeaders = ["kings landing"]
     let sectionText = ["not a fun place plus a bunch of tother stuff to make a longer label", "there be bars of iron", "there be bars and wine is where all sorts of weird stuff happens but not as weird as in braavos, ewww"]
@@ -59,6 +59,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, HeaderView
         return sectionCollapsed[sectionHeaders[section]]! ? headerHeight[section]! :40.0
     }
     
+    //TODO: just checking if this works
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = sectionData[sectionHeaders[indexPath.section]]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -80,7 +82,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, HeaderView
         func toggleHeaderBtn(section: Int) {
             sectionCollapsed[sectionHeaders[section]]  = !sectionCollapsed[sectionHeaders[section]]!
             tableView.beginUpdates()
-            tableView.reloadSections([section], with: .automatic)  // <- that's a place for an animation effect woo hoo!
+            tableView.reloadSections([section], with: .automatic)  // <- that's a place for an animation effect woo hoo! (NOt reallY)
             tableView.endUpdates()
         }
     

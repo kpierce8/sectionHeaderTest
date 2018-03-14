@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view autoresizesSubviews="NO" contentMode="redraw" restorationIdentifier="HeaderViewNib" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="HeaderViewNib" customModule="SectionHeaderTests" customModuleProvider="target">
+        <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="redraw" restorationIdentifier="HeaderViewNib" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="HeaderViewNib" customModule="SectionHeaderTests" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="364" height="72"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
